@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name">ParalegalGuideApp</string>
-  <string name="title_home">Nyumbani</string>
-  <string name="title_dashboard">Ubao</string>
-  <string name="title_notifications">Habari</string>
+  <string name="action_help">Msaada</string>
 </resources>
