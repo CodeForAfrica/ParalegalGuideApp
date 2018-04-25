@@ -1,0 +1,58 @@
+body {
+  font-family: serif;
+  font-size: 17px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+h1 {
+  font-family: sans-serif-condensed;
+  text-align: center;
+  color: #951d5b;
+}
+h1.front_matter {
+  text-align: left;
+}
+h1 small {
+  display: block;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+}
+p {
+  text-align: justify;
+}
+.callout {
+  padding: 2px;
+  margin-bottom: 8px;
+}
+.callout-primary {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+}
+.callout-secondary {
+  background-color: #f2dede;
+  border: 1px solid #ddd;
+}
+.callout-info {
+  background-color: #d9edf7;
+  border: 1px solid #ddd;
+}
+.callout-default h2,
+.callout-default h3,
+.callout-default h4,
+.callout-default h5,
+.callout-default h6 {
+  font-style: italic;
+}
+.rejea {
+  list-style-position: inside;
+}
+address .address-line{
+  display: block;
+}

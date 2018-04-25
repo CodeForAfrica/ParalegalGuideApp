@@ -1,10 +1,118 @@
 {
-  "title": "MwaKi",
-  "chapters": [
+  "title": "Mwongozo wa Wawezeshaji wa Wasaidizi wa Kisheria",
+  "frontMatter": [
     {
-      "file": "index.html",
-      "title": "MwaKi"
+      "file": "book/vifupisho.html",
+      "number": "i",
+      "title": "Finyazo/Vifupisho"
+    },
+    {
+      "file": "book/dibaji.html",
+      "number": "ii",
+      "title": "Dibaji"
+    },
+    {
+      "file": "book/shukrani.html",
+      "number": "iii",
+      "title": "Shukrani"
+    },
+    {
+      "file": "book/utangulizi.html",
+      "number": "iv",
+      "title": "Utangulizi"
+    }
+  ],
+  "body": [
+    {
+      "file": "book/chapter-01.html",
+      "number": "Sura ya Kwanza",
+      "title": "Msaidizi wa Kisheria na Majukumu Yake",
+      "icon": "icon_hands_helping"
+    },
+    {
+      "file": "book/chapter-02.html",
+      "number": "Sura ya Pili",
+      "title": "Kujenga Uwezo wa Jamii Kupitia Sheria",
+      "icon": "icon_balance_scale"
+    },
+    {
+      "file": "book/chapter-03.html",
+      "number": "Sura ya Tatu",
+      "title": "Ushawishi",
+      "icon": "icon_bullhorn"
+    },
+    {
+      "file": "book/chapter-04.html",
+      "number": "Sura ya Nne",
+      "title": "Haki za Binadamu",
+      "icon": "icon_users"
+    },
+    {
+      "file": "book/chapter-05.html",
+      "number": "Sura ya Tano",
+      "title": "Haki za Wanawake",
+      "icon": "icon_woman"
+    },
+    {
+      "file": "book/chapter-06.html",
+      "number": "Sura ya Sita",
+      "title": "Jinsia na Ukatili wa Kijinsia",
+      "icon": "icon_venus"
+    },
+    {
+      "file": "book/chapter-07.html",
+      "number": "Sura ya Saba",
+      "title": "Ndoa na Taratibu Zake",
+      "icon": "icon_venus_mars"
+    },
+    {
+      "file": "book/chapter-08.html",
+      "number": "Sura ya Nane",
+      "title": "Ajira, Kazi na Hifadhi ya Jamii",
+      "icon": "icon_handshake"
+    },
+    {
+      "file": "book/chapter-09.html",
+      "number": "Sura ya Tisa",
+      "title": "Mtoto na Haki Zake",
+      "icon": "icon_child"
+    },
+    {
+      "file": "book/chapter-10.html",
+      "number": "Sura ya Kumi",
+      "title": "Urithi na Mirathi",
+      "icon": "icon_tree"
+    },
+    {
+      "file": "book/chapter-11.html",
+      "number": "Sura ya Kumi na Moja",
+      "title": "Raslimali Ardhi",
+      "icon": "icon_map"
+    },
+    {
+      "file": "book/chapter-12.html",
+      "number": "Sura ya Kumi na Mbili",
+      "title": "Mazingira na Uhifadhi wa Mazingira",
+      "icon": "icon_globe"
+    },
+    {
+      "file": "book/chapter-13.html",
+      "number": "Sura ya Kumi na Tatu",
+      "title": "Haki za Raia Katika Mfuko wa Jinai",
+      "icon": "icon_hand_rock"
+    },
+    {
+      "file": "book/chapter-14.html",
+      "number": "Sura ya Kumi na Nne",
+      "title": "Uongozi na Utawala",
+      "icon": "icon_building"
+    }
+  ],
+  "backMatter": [
+    {
+      "file": "book/rejea.html",
+      "number": "v",
+      "title": "Rejea"
     }
   ]
 }
-    
