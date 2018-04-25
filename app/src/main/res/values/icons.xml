@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="icon_balance_scale">&#xf24e;</string>
+  <string name="icon_building">&#xf1ad;</string>
+  <string name="icon_bullhorn">&#xf0a1;</string>
+  <string name="icon_child">&#xf1ae;</string>
+  <string name="icon_globe">&#xf0ac;</string>
+  <string name="icon_hand_rock">&#xf255;</string>
+  <string name="icon_handshake">&#xf2b5;</string>
+  <string name="icon_hands_helping">&#xf4c4;</string>
+  <string name="icon_map">&#xf279;</string>
+  <string name="icon_tree">&#xf1bb;</string>
+  <string name="icon_woman">&#xf182;</string>
+  <string name="icon_users">&#xf0c0;</string>
+  <string name="icon_venus">&#xf221;</string>
+  <string name="icon_venus_mars">&#xf228;</string>
+</resources>

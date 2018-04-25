@@ -16,6 +16,7 @@
 package org.codefortanzania.lsf.pga.ui;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,57 +24,56 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 
 /**
- * A fragment that displays a WebView. <p> The WebView is automically paused or resumed when the
- * Fragment is paused or resumed.
+ * A fragment that displays a WebView. <p> The WebView is automatically paused and/or resumed when
+ * the Fragment is paused or resumed.
  */
 public class WebViewFragment extends Fragment {
 
-  private WebView mWebView;
-  private boolean mIsWebViewAvailable;
-
-  public WebViewFragment() {
-  }
+  private WebView webView;
 
   /**
    * Called to instantiate the view. Creates and returns the WebView.
    */
+  @NonNull
   @Override
-  public View onCreateView(LayoutInflater inflater, ViewGroup container,
-      Bundle savedInstanceState) {
-    if (mWebView != null) {
-      mWebView.destroy();
+  public View onCreateView(@NonNull final LayoutInflater inflater,
+      final ViewGroup container, final Bundle savedInstanceState) {
+    if (this.webView != null) {
+      this.webView.destroy();
+      this.webView = null;
     }
-    mWebView = new WebView(getContext());
-    mIsWebViewAvailable = true;
-    return mWebView;
+    this.webView = this.createWebView();
+    if (this.webView == null) {
+      throw new IllegalStateException("createWebView() may not return null");
+    }
+    return this.webView;
+  }
+
+  /**
+   * Point for child Fragments to instantiate their own web view (if desired).
+   *
+   * @return new web view instance.
+   */
+  protected WebView createWebView() {
+    return new WebView(getContext());
   }
 
   /**
    * Called when the fragment is visible to the user and actively running. Resumes the WebView.
    */
   @Override
-  public void onPause() {
-    super.onPause();
-    mWebView.onPause();
+  public void onResume() {
+    this.webView.onResume();
+    super.onResume();
   }
 
   /**
    * Called when the fragment is no longer resumed. Pauses the WebView.
    */
   @Override
-  public void onResume() {
-    mWebView.onResume();
-    super.onResume();
-  }
-
-  /**
-   * Called when the WebView has been detached from the fragment. The WebView is no longer available
-   * after this time.
-   */
-  @Override
-  public void onDestroyView() {
-    mIsWebViewAvailable = false;
-    super.onDestroyView();
+  public void onPause() {
+    super.onPause();
+    this.webView.onPause();
   }
 
   /**
@@ -81,17 +81,10 @@ public class WebViewFragment extends Fragment {
    */
   @Override
   public void onDestroy() {
-    if (mWebView != null) {
-      mWebView.destroy();
-      mWebView = null;
+    if (this.webView != null) {
+      this.webView.destroy();
+      this.webView = null;
     }
     super.onDestroy();
-  }
-
-  /**
-   * Gets the WebView.
-   */
-  public WebView getWebView() {
-    return mIsWebViewAvailable ? mWebView : null;
   }
 }

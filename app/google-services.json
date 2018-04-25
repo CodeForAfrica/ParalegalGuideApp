@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "113179324583",
+    "firebase_url": "https://lsf-paralegal-guide-f2d66.firebaseio.com",
+    "project_id": "lsf-paralegal-guide-f2d66",
+    "storage_bucket": "lsf-paralegal-guide-f2d66.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113179324583:android:5cffdd6d03ec5787",
+        "android_client_info": {
+          "package_name": "org.codefortanzania.lsf.pga"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "113179324583-udgebcedsjlhm5mfso2nc0a47fi65sot.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnB8244dwstEPdfIk3oLdFo3ufaOCc9wI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

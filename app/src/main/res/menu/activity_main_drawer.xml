@@ -3,21 +3,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-  <group android:checkableBehavior="single">
+  <group
+      android:id="@+id/activity_main_drawer_book_front_matter"
+      android:checkableBehavior="single">
     <item
-        android:id="@+id/nav_bookmark"
+        android:id="@+id/nav_abbreviations"
+        android:icon="@drawable/ic_menu_abbreviations"
+        android:title="@string/action_abbreviations"/>
+    <item
+        android:id="@+id/nav_preface"
+        android:icon="@drawable/ic_menu_preface"
+        android:title="@string/action_preface"/>
+    <item
+        android:id="@+id/nav_acknowledgements"
+        android:icon="@drawable/ic_menu_acknowledgements"
+        android:title="@string/action_acknowledgements"/>
+    <item
+        android:id="@+id/nav_introduction"
         android:icon="@drawable/ic_menu_bookmark"
-        android:title="@string/action_bookmarks"/>
+        android:title="@string/action_introduction"/>
   </group>
 
-  <group android:checkableBehavior="single">
+  <group
+      android:id="@+id/activity_main_drawer_book_back_matter"
+      android:checkableBehavior="single">
     <item
-        android:id="@+id/nav_settings"
-        android:icon="@drawable/ic_menu_settings"
-        android:title="@string/action_settings"/>
-    <item
-        android:id="@+id/nav_help"
-        android:icon="@drawable/ic_menu_help"
-        android:title="@string/action_help"/>
+        android:id="@+id/nav_bibliography"
+        android:icon="@drawable/ic_menu_bibliography"
+        android:title="@string/action_bibliography"/>
   </group>
 </menu>
