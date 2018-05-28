@@ -27,7 +27,7 @@ import org.codefortanzania.lsf.pga.book.Contents.Entry;
  */
 public abstract class BaseActivity extends AppCompatActivity {
 
-  protected static final String MISSING_BUNDLE_MSG = "bundle may not be null";
+  private static final String MISSING_BUNDLE_MSG = "bundle may not be null";
   private static final String MISSING_CONTENTS_MSG = "contents may not be null";
 
   private Contents contents;
@@ -53,7 +53,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     this.toolbar = this.findViewById(R.id.activity_toolbar);
     this.setSupportActionBar(this.toolbar);
     final ActionBar actionbar = this.getSupportActionBar();
-    actionbar.setDisplayHomeAsUpEnabled(true);
+    if (actionbar != null) {
+      actionbar.setDisplayHomeAsUpEnabled(true);
+    }
     this.analytics = FirebaseAnalytics.getInstance(this);
   }
 
@@ -102,10 +104,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
   protected Toolbar getToolbar() {
     return this.toolbar;
-  }
-
-  protected void updateTitle(final CharSequence title) {
-    this.toolbar.setTitle(title);
   }
 
   protected FirebaseAnalytics analytics() {

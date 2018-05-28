@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+  <color name="colorBlack">#000000</color>
+  <color name="colorWhite">#ffffff</color>
+  <color name="colorMuted">#777777</color>
   <color name="colorPrimary">#951d5b</color>
-  <color name="colorPrimaryDark">#951d5b</color>
-  <color name="colorAccent">#951d5b</color>
+  <color name="colorPrimaryDark">@color/colorPrimary</color>
+  <color name="colorAccent">@color/colorPrimary</color>
   <color name="colorSplashBackground">@color/colorPrimary</color>
 </resources>
