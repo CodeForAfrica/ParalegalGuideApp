@@ -2,6 +2,10 @@
 
   <!-- Application theme. -->
   <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <!--<item name="android:textColorPrimary">@color/colorWhite</item>-->
+    <!--<item name="android:textColorSecondary">@color/colorWhite</item>-->
+    <!--<item name="android:textColor">@color/colorWhite</item>-->
+    <!--<item name="android:actionMenuTextColor">@color/colorWhite</item>-->
     <item name="colorPrimary">@color/colorPrimary</item>
     <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     <item name="colorAccent">@color/colorAccent</item>

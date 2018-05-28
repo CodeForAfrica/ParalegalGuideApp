@@ -84,7 +84,7 @@ public class BookActivity extends BaseActivity {
     params.putInt(VIEW_CHAPTER_EVENT_NUMBER, position + 1);
     params.putCharSequence(VIEW_CHAPTER_EVENT_TITLE, title);
     this.analytics().logEvent(VIEW_CHAPTER_EVENT_NAME, params);
-    this.updateTitle(title);
+    this.setTitle(title);
   }
 
   /**

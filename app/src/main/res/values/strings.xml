@@ -8,5 +8,7 @@
   <string name="action_preface">Dibaji</string>
   <string name="action_acknowledgements">Shukrani</string>
   <string name="action_introduction">Utangulizi</string>
+  <string name="action_search">Pekua</string>
+  <string name="action_search_hint">Pekua mwongozo</string>
   <string name="action_bibliography">Rejea</string>
 </resources>

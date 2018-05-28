@@ -1,17 +1,12 @@
 package org.codefortanzania.lsf.pga;
 
-import android.content.res.AssetManager;
+import android.content.Context;
 import android.os.Process;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import com.google.gson.Gson;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import org.codefortanzania.lsf.pga.book.Contents;
 import org.codefortanzania.lsf.pga.book.ContentsLoadedEvent;
+import org.codefortanzania.lsf.pga.db.DatabaseTable;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -27,7 +22,7 @@ public class SplashActivity extends AppCompatActivity {
     super.onStart();
 
     EventBus.getDefault().register(this);
-    new BookLoaderThread(this.getAssets()).start();
+    new BookLoaderThread(this).start();
   }
 
   @SuppressWarnings("unused")
@@ -46,27 +41,20 @@ public class SplashActivity extends AppCompatActivity {
 
   private static class BookLoaderThread extends Thread {
 
-    private AssetManager assets;
+    private Context context;
 
-    BookLoaderThread(@NonNull final AssetManager assets) {
+    BookLoaderThread(@NonNull final Context context) {
       super();
 
-      this.assets = assets;
+      this.context = context;
     }
 
     @Override
     public void run() {
       Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
-      final Gson gson = new Gson();
-      try {
-        final InputStream is = this.assets.open(Contents.FILE_LOCATION);
-        final BufferedReader reader
-            = new BufferedReader(new InputStreamReader(is));
-        final Contents contents = gson.fromJson(reader, Contents.class);
-        EventBus.getDefault().post(new ContentsLoadedEvent(contents));
-      } catch (IOException e) {
-        Log.e(getClass().getSimpleName(), "Exception parsing JSON", e);
-      }
+      final DatabaseTable db = new DatabaseTable(this.context);
+      final Contents contents = db.currentContents();
+      EventBus.getDefault().post(new ContentsLoadedEvent(contents));
     }
   }
 }

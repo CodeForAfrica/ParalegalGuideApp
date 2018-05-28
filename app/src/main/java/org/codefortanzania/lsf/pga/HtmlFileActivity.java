@@ -46,11 +46,6 @@ public class HtmlFileActivity extends SingleFragmentActivity {
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    if (savedInstanceState != null) {
-      this.initializeFromBundle(savedInstanceState);
-    } else {
-      this.initializeFromIntent();
-    }
     if (this.fileUrl == null) {
       Log.e(this.getClass().getSimpleName(), MISSING_FILE_URL_MSG);
       throw new IllegalStateException(MISSING_FILE_URL_MSG);
@@ -87,7 +82,7 @@ public class HtmlFileActivity extends SingleFragmentActivity {
     super.onResume();
 
     if (this.title != null) {
-      this.updateTitle(this.title);
+      this.setTitle(this.title);
     }
   }
 

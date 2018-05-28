@@ -1,5 +1,8 @@
 package org.codefortanzania.lsf.pga;
 
+import android.app.SearchManager;
+import android.app.SearchableInfo;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,8 +12,12 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.SearchView;
+import android.view.Menu;
 import android.view.MenuItem;
+import java.util.List;
 import org.codefortanzania.lsf.pga.book.Contents;
 import org.codefortanzania.lsf.pga.book.ContentsEntrySelectedEvent;
 import org.codefortanzania.lsf.pga.book.ContentsFragment;
@@ -51,7 +58,10 @@ public class MainActivity extends SingleFragmentActivity
 
     this.setupStrictMode();
 
-    this.getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
+    final ActionBar actionBar = this.getSupportActionBar();
+    if (actionBar != null) {
+      actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
+    }
 
     final DrawerLayout drawer = this.findViewById(R.id.drawer_layout);
     final ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -83,6 +93,22 @@ public class MainActivity extends SingleFragmentActivity
       builder.penaltyFlashScreen();
     }
     StrictMode.setThreadPolicy(builder.build());
+  }
+
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu) {
+    super.onCreateOptionsMenu(menu);
+
+    this.getMenuInflater().inflate(R.menu.options_menu, menu);
+    final SearchManager searchManager =
+        (SearchManager) this.getSystemService(Context.SEARCH_SERVICE);
+    if (searchManager != null) {
+      final SearchView searchView =
+          (SearchView) menu.findItem(R.id.action_search).getActionView();
+      searchView.setSearchableInfo(
+          searchManager.getSearchableInfo(new ComponentName(this, SearchableActivity.class)));
+    }
+    return true;
   }
 
   @Override

@@ -28,6 +28,17 @@
         android:name=".MainActivity"
         android:theme="@style/AppTheme.NoActionBar"/>
     <activity
+        android:name=".SearchableActivity"
+        android:parentActivityName=".MainActivity"
+        android:theme="@style/AppTheme.NoActionBar">
+      <intent-filter>
+        <action android:name="android.intent.action.SEARCH"/>
+      </intent-filter>
+      <meta-data
+          android:name="android.app.searchable"
+          android:resource="@xml/searchable"/>
+    </activity>
+    <activity
         android:name=".BookActivity"
         android:parentActivityName=".MainActivity"
         android:theme="@style/AppTheme.NoActionBar">

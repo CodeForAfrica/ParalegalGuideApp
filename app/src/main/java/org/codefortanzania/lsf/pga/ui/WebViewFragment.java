@@ -55,7 +55,7 @@ public class WebViewFragment extends Fragment {
    * @return new web view instance.
    */
   protected WebView createWebView() {
-    return new WebView(getContext());
+    return new WebView(this.getContext());
   }
 
   /**
